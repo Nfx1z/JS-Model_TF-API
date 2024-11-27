@@ -1,4 +1,5 @@
 const predictClassification = require('../controller/predictController');
+const saveData = require('../storeData');
 const crypto = require('crypto');
  
 async function postPredictHandler(request, h) {
@@ -22,12 +23,14 @@ async function postPredictHandler(request, h) {
 	}
 	
 	// Return a 201 status code and the response data object
-	if(isValid)
+	if(isValid){
+		await saveData(id, label, suggestion, createdAt);
 		return h.response({
-		status: 'success',
-		message: 'Model is predicted successfully',
-		data
+			status: 'success',
+			message: 'Model is predicted successfully',
+			data
 		}).code(201);
+	}
 
 	// Return a 400 status code and an error message
 	return h.response({
