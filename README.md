@@ -23,8 +23,8 @@ A robust API service built with Hapi.js that serves machine learning model predi
     ├── handler/
     │   └── predictHandler.js       # ML model loading logic
     ├── controller/
-    │   └── predictController.js    # Fetch data from firestore
-    └── loadModel.js        # Fetch data from firestore
+    │   └── predictController.js    # Controller for predict
+    └── loadModel.js        # Load the model from specific url
 ```
 
 ## Setup Instructions
@@ -83,7 +83,7 @@ A robust API service built with Hapi.js that serves machine learning model predi
 3. Make your changes and write tests
 4. Submit a pull request with a clear description of your changes
 
-> [!INFO]
+> [!IMPORTANT]
 > To see the module that this project use, run the following command in the project directory:
 >
 > ```bash
