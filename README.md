@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A robust API service built with Hapi.js that serves machine learning model predictions.
+A robust API service built with Hapi.js that serves machine learning model predictions. This service utilizes a pre-trained machine learning model to make predictions based on input data.
 
 ## Techincal Stack
 
@@ -15,7 +15,9 @@ A robust API service built with Hapi.js that serves machine learning model predi
 ## Project Structure
 
 ```bash
-├── script.sh          # Script to install dependencies
+├── key.json        # Firestore servvice account key
+├── .env            # Environment variables
+├── script.sh       # Script to install dependencies
 └── src/
     ├── server/
     │   ├── server.js               # Main server configuration
@@ -71,7 +73,7 @@ A robust API service built with Hapi.js that serves machine learning model predi
 2. Predict Image
     - Endpoints: **POST** `/predict`
     - Require `image` in the request body
-3. Predict History
+3. Fetch all history
     - Endpoints: **GET** `/predict/histories`
 
 ## Important Notes
@@ -79,7 +81,7 @@ A robust API service built with Hapi.js that serves machine learning model predi
 1. Ensure the key passed in the request body is `image`.
 2. Ensure the `.env` file is correctly configured with the required environment variables.
 3. Ensure the `key.json` file is present in the project root directory.
-4. `key.json` is used for Firebase authentication.
+4. `key.json` is used for Firebase authentication. Please refer to the [Firebase documentation](https://firebase.google.com/docs/admin/setup) for more information.
 
 ## Contributing
 
@@ -87,11 +89,3 @@ A robust API service built with Hapi.js that serves machine learning model predi
 2. Create a new branch for your feature
 3. Make your changes and write tests
 4. Submit a pull request with a clear description of your changes
-
-> [!IMPORTANT]
-> To see the module that this project use, run the following command in the project directory:
->
-> ```bash
-> echo "Modules: "
-> npm ls --omit=dev --depth=0 | grep -o '── [^ ]*' | sed 's/^─//'
-> ```

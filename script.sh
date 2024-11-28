@@ -75,3 +75,7 @@ rebuild_dependencies
 
 # reinstall dependencies
 install_dependencies
+
+# List the dependencies
+echo "Dependencies:"
+npm ls --omit=dev --depth=0 | grep -o '── [^ ]*' | sed 's/^─//'

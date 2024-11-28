@@ -6,3 +6,4 @@ node_modules
 .env.example
 key.json
 key.json.example
+Dockerfile
