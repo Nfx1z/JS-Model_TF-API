@@ -36,7 +36,7 @@ A robust API service built with Hapi.js that serves machine learning model predi
 1. Clone the repository `git clone <repository-url>`
 2. Install WSL `ubuntu` in your Windows.
 3. Open the WSL terminal in Visual Studio Code and navigate to your project.
-4. Run `bash modules.sh` if you are new to WSL.
+4. Run `bash script.sh` if you are new to WSL.
 5. Or you can run the following command at your WSL main directory to install the configuration:
 
     ```bash
