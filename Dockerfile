@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the port the application will run on
-EXPOSE 8080
+EXPOSE 3000
 
 # Run the command to start the server in production mode
 CMD ["node", "src/server/server.js"]
