@@ -30,10 +30,10 @@ async function predictClassification(model, image) {
 
     // Return the prediction result
     return { isValid: true, label, suggestion };
-  	}
-  	// Handle any errors that occur during prediction
-  	catch (error) {
-    	console.error('Prediction error:', error);
+  }
+  // Handle any errors that occur during prediction
+  catch (error) {
+    console.error('Prediction error:', error);
 		
 		// Return a 400 status code and an error message
 		return {
