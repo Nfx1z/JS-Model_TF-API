@@ -2,6 +2,8 @@ node_modules
 .git
 .gitignore
 .vscode
+.env
 .env.example
 key.json
 key.json.example
+Dockerfile
