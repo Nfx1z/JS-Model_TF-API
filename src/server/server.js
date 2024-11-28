@@ -6,7 +6,7 @@ const loadModel = require('../loadModel');
 (async () => {
     // Create a server with a host and port
     const server = Hapi.server({
-        port: 3000,
+        port: 8080,
         host: 'localhost',
         routes: {
             cors: {
