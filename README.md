@@ -15,15 +15,17 @@ A robust API service built with Hapi.js that serves machine learning model predi
 ## Project Structure
 
 ```bash
-├── modules.sh          # Script to install dependencies
+├── script.sh          # Script to install dependencies
 └── src/
     ├── server/
     │   ├── server.js               # Main server configuration
     │   └── routes.js               # API route definitions
     ├── handler/
+    │   ├── historyHandler.js       # Fetch all data from firestore
     │   └── predictHandler.js       # ML model loading logic
     ├── controller/
     │   └── predictController.js    # Controller for predict
+    ├── storeData.js        # Store the results to firestore
     └── loadModel.js        # Load the model from specific url
 ```
 
@@ -33,7 +35,9 @@ A robust API service built with Hapi.js that serves machine learning model predi
 
 1. Clone the repository `git clone <repository-url>`
 2. Install WSL `ubuntu` in your Windows.
-3. After installing WSL, open the WSL terminal and run the following command to install the configuration:
+3. Open the WSL terminal in Visual Studio Code and navigate to your project.
+4. Run `bash modules.sh` if you are new to WSL.
+5. Or you can run the following command at your WSL main directory to install the configuration:
 
     ```bash
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -41,8 +45,9 @@ A robust API service built with Hapi.js that serves machine learning model predi
     nvm use 18
     ```
 
-4. Install dependencies `bash modules.sh`
-5. (Optional) If error occurs, run:
+6. Back to your project directory.
+7. Install dependencies by run `npm install`
+8. If error occurs, run:
 
     ```bash
     sudo apt-get update
@@ -50,7 +55,7 @@ A robust API service built with Hapi.js that serves machine learning model predi
     npm rebuild @tensorflow/tfjs-node --build-from-source
     ```
 
-    and rerun the `bash modules.sh`
+    and then rerun the `npm install`
 
 ## II. Required Environment Variables
 
