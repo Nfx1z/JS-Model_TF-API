@@ -3,11 +3,14 @@ const Hapi = require('@hapi/hapi');
 const routes = require('./routes');
 const loadModel = require('../loadModel');
  
-(async () => {
+const init = async () => {
+
+    // Get the port from the environment variable or default to 8080
+    const portVar = process.env.PORT || 8080;
     // Create a server with a host and port
     const server = Hapi.server({
-        port: 8080,
-        host: 'localhost',
+        port: portVar,
+        host: '0.0.0.0',
         routes: {
             cors: {
                 origin: ['*'],
@@ -43,10 +46,12 @@ const loadModel = require('../loadModel');
     await server.start();
     console.log(`Server start at: ${server.info.uri}`);
     
-})();
+};
 
 // Handle uncaught errors gracefully
 process.on('unhandledRejection', (err) => {
     console.error(err);
     process.exit(1);
 });
+
+init();
