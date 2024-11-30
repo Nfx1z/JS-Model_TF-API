@@ -1,0 +1,17 @@
+# Specify the Node.js version. For example: nodejs18, etc.
+runtime: nodejs18
+
+# Set any environment variables your app needs
+env_variables:
+  MODEL_URL: your-model-url / your-model-path
+  PROJECT_ID: your-project-id
+  FIRESTORE_COLLECTION: your-firestore-collection
+
+# Set service account credentials
+service_account: your-service-account@your-project-id.iam.gserviceaccount.com
+
+# Set the path to your app's main module
+handlers:
+  # Serve the app's main module
+  - url: /.*
+    script: auto
